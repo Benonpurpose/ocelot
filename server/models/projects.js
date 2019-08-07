@@ -18,6 +18,9 @@ const projectSchema = new mongoose.Schema({
     privacy: {
         type: String
     },
+    projectImg: {
+        type: String
+    },
     // chatrooms: [{
     //     type: mongoose.Schema.Types.ObjectId,
     //     ref: 'Chatroom'
