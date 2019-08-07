@@ -19,6 +19,11 @@ router.post(
       //finding a user
       let user = await User.findOne({ _id: req.params.id });
       if (user) {
+        const avatar = gravatar.url(req.body.email, {
+           s: '200', //size
+           r: 'pg',//rated PG
+           d: "mm"//Default
+        });
         const newProject = new Project({
           name: req.body.name,
           privacy: req.body.privacy,
@@ -37,7 +42,7 @@ router.post(
 //@route    GET /api/projects/:id
 //@desc     fetches users projects
 //@access   private
-router.get(
+router.get(#freeBen
   "/:id",
   passport.authenticate("jwt", { session: false }),
   async (req, res, next) => {
